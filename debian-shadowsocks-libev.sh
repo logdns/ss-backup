@@ -120,7 +120,7 @@ function download_files(){
     unzip shadowsocks-libev.zip
     if [ $? -eq 0 ];then
         cd $cur_dir/shadowsocks-libev-master/
-        if ! wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev-debian; then
+        if ! wget --no-check-certificate https://raw.githubusercontent.com/logdns/ss-backup/master/shadowsocks/shadowsocks-libev-debian; then
             echo "Failed to download shadowsocks-libev start script!"
             exit 1
         fi
