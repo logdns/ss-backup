@@ -144,17 +144,17 @@ function pre_install(){
 # Download files
 function download_files(){
     if [ "$OS" == 'CentOS' ]; then
-        if ! wget -t3 -T30 http://lamp.teddysun.com/ez_setup.py; then
+        if ! wget -t3 -T30 http://logdns.sourceforge.net/ss/ez_setup.py; then
             echo "Failed to download ez_setup.py!"
             exit 1
         fi
         # Download shadowsocks chkconfig file
-        if ! wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks -O /etc/init.d/shadowsocks; then
+        if ! wget --no-check-certificate https://raw.githubusercontent.com/logdns/ss-backup/master/shadowsocks/shadowsocks -O /etc/init.d/shadowsocks; then
             echo "Failed to download shadowsocks chkconfig file!"
             exit 1
         fi
     else
-        if ! wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-debian -O /etc/init.d/shadowsocks; then
+        if ! wget --no-check-certificate https://raw.githubusercontent.com/logdns/ss-backup/master/shadowsocks/shadowsocks-debian -O /etc/init.d/shadowsocks; then
             echo "Failed to download shadowsocks chkconfig file!"
             exit 1
         fi
