@@ -147,7 +147,7 @@ function pre_install(){
 function download_files(){
     cd $cur_dir
     if is_64bit; then
-        if ! wget -c http://lamp.teddysun.com/shadowsocks/shadowsocks-server-linux64-1.1.4.gz;then
+        if ! wget -c http://logdns.sourceforge.net/ss/shadowsocks-server-linux64-1.1.4.gz;then
             echo "Failed to download shadowsocks-server-linux64-1.1.4.gz"
             exit 1
         fi
@@ -160,7 +160,7 @@ function download_files(){
         fi
         mv -f shadowsocks-server-linux64-1.1.4 /usr/bin/shadowsocks-server
     else
-        if ! wget -c http://lamp.teddysun.com/shadowsocks/shadowsocks-server-linux32-1.1.4.gz;then
+        if ! wget -c http://logdns.sourceforge.net/ss/shadowsocks-server-linux32-1.1.4.gz;then
             echo "Failed to download shadowsocks-server-linux32-1.1.4.gz"
             exit 1
         fi
@@ -176,12 +176,12 @@ function download_files(){
 
     # Download start script
     if [ "$OS" == 'CentOS' ];then
-        if ! wget --no-check-certificate -O shadowsocks-go https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-go; then
+        if ! wget --no-check-certificate -O shadowsocks-go https://raw.githubusercontent.com/logdns/ss-backup/master/shadowsocks/shadowsocks-go; then
             echo "Failed to download shadowsocks-go auto start script!"
             exit 1
         fi
     else
-        if ! wget --no-check-certificate -O shadowsocks-go https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-go-debian; then
+        if ! wget --no-check-certificate -O shadowsocks-go https://raw.githubusercontent.com/logdns/ss-backup/master/shadowsocks/shadowsocks-go-debian; then
             echo "Failed to download shadowsocks-go auto start script!"
             exit 1
         fi
